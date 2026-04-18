@@ -1,0 +1,14 @@
+{
+  "name": "stemsprouts",
+  "version": "1.0.0",
+  "description": "STEM Sprouts - youth-led nonprofit focused on making STEM accessible.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "vercel dev",
+    "build": "vercel build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
