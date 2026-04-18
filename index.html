@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>STEM Sprouts</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -576,6 +577,46 @@
       height: 32px;
       margin-left: 4px;
     }
+
+    /* Partner Strip Styles */
+    .partner-section {
+      padding: 4rem 2rem;
+      background: #161616;
+      text-align: center;
+    }
+
+    .partner-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .partner-logo {
+      height: 60px;
+      width: auto;
+      filter: grayscale(100%) brightness(0.8);
+      opacity: 0.6;
+      transition: all 0.4s ease;
+      object-fit: contain;
+    }
+
+    .partner-logo:hover {
+      filter: grayscale(0%) brightness(1);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      .partner-strip {
+        gap: 2rem;
+      }
+      .partner-logo {
+        height: 45px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -719,6 +760,15 @@
       <p style="margin-top: 1.5rem; font-size: 1rem; color: #ccc; line-height: 1.6;">
         Watch our founder share the vision behind STEM Sprouts and how we're making STEM education accessible to every child in our community.
       </p>
+    </div>
+  </section>
+
+  <section class="partner-section">
+    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Our Partners & Supporters</h3>
+    <div class="partner-strip">
+      <img src="partnerlogos/hcbhackclub.png" alt="Hack Club Bank" class="partner-logo">
+      <img src="partnerlogos/futurelead.avif" alt="Future Lead" class="partner-logo">
+      <img src="partnerlogos/TEDxJohnsCreekLogo.jpeg" alt="TEDx Johns Creek" class="partner-logo">
     </div>
   </section>
 
