@@ -111,31 +111,6 @@
       transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    .nav-menu {
-      position: fixed;
-      left: -100%;
-      top: 70px;
-      flex-direction: column;
-      background-color: #1a1a1a;
-      width: 100%;
-      text-align: center;
-      transition: 0.3s;
-      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-      padding: 2rem 0;
-    }
-
-    .nav-menu.active {
-      left: 0;
-    }
-
-    .nav-menu li {
-      margin: 1rem 0;
-    }
-
-    .nav-menu a {
-      font-size: 1.2rem;
-    }
-
     header {
       text-align: center;
       padding: 6rem 2rem 4rem;
@@ -317,30 +292,35 @@
         display: flex;
       }
       
-      nav ul {
+      #nav-menu {
         position: fixed;
-        left: -100%;
-        top: 70px;
+        left: 0;
+        top: 60px;
         flex-direction: column;
         background-color: #1a1a1a;
         width: 100%;
+        height: calc(100vh - 60px);
         text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(-100%);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 2rem 0;
         gap: 0;
       }
       
-      nav ul.active {
-        left: 0;
+      #nav-menu.active {
+        transform: translateX(0);
       }
       
-      nav ul li {
-        margin: 1rem 0;
+      #nav-menu li {
+        margin: 1.5rem 0;
       }
       
-      nav ul a {
-        font-size: 1.2rem;
+      #nav-menu a {
+        font-size: 1.5rem;
       }
       
       header {
@@ -777,6 +757,7 @@
         <img src="partnerlogos/futurelead.avif" alt="Future Lead Logo" class="partner-logo">
         <img src="partnerlogos/VolunteerHub.jpg" alt="VolunteerHub Logo" class="partner-logo">
         <img src="partnerlogos/nata.jpg" alt="NATA Logo" class="partner-logo">
+        <img src="partnerlogos/nsri.png" alt="NSRI Logo" class="partner-logo">
         <img src="partnerlogos/TEDxJohnsCreekLogo.jpeg" alt="TEDx Johns Creek Logo" class="partner-logo">
       </div>
     </section>
@@ -866,9 +847,10 @@
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
     
-    hamburger.addEventListener('click', function() {
-      hamburger.classList.toggle('active');
+    hamburger.addEventListener('click', () => {
+      const isActive = hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isActive);
     });
     
     // Close menu when clicking on a link
@@ -876,6 +858,7 @@
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
       });
     });
   </script>
