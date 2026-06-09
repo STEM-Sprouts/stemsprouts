@@ -224,7 +224,6 @@
       transform: translateY(-2px);
     }
 
-    /* New styles for images and content sections */
     .content-with-image {
       display: flex;
       align-items: center;
@@ -285,6 +284,81 @@
       font-size: 0.95rem;
       line-height: 1.6;
       color: #ccc;
+    }
+
+    /* Chapters Section */
+    .chapters-section {
+      padding: 4rem 2rem;
+      background: #111;
+    }
+
+    .chapters-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .chapters-inner > h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .chapters-inner > p {
+      color: #ccc;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 650px;
+    }
+
+    .chapters-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .chapters-stat .stat-number {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      display: block;
+    }
+
+    .chapters-stat .stat-label {
+      font-size: 0.78rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .chapters-cta-card {
+      background: linear-gradient(135deg, #1a1a1a, #1c2b1c);
+      border: 1px solid rgba(74, 222, 128, 0.2);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .chapters-cta-card:hover {
+      border-color: rgba(74, 222, 128, 0.4);
+      box-shadow: 0 12px 40px rgba(74, 222, 128, 0.1);
+    }
+
+    .chapters-cta-text h4 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .chapters-cta-text p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #aaa;
+      line-height: 1.6;
     }
 
     @media (max-width: 768px) {
@@ -394,6 +468,17 @@
       .workshop-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+      }
+
+      .chapters-cta-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.75rem;
+      }
+
+      .chapters-stats {
+        gap: 1.5rem;
+        flex-wrap: wrap;
       }
     }
 
@@ -508,7 +593,6 @@
       transform: translateY(0);
     }
 
-    /* Fixed video scaling styles */
     .video-container {
       position: relative;
       width: 100%;
@@ -567,7 +651,6 @@
       margin-left: 4px;
     }
 
-    /* Partner Strip Styles */
     .partner-section {
       padding: 4rem 2rem;
       background: #161616;
@@ -621,6 +704,7 @@
       <li><a href="partner">Partner</a></li>
       <li><a href="pinboard">Pinboard</a></li>
       <li><a href="resources">Resources</a></li>
+      <li><a href="https://chapters.stem-sprouts.org" target="_blank" rel="noopener">Chapters</a></li>
       <li><a href="index#contact">Contact</a></li>
       <li><a href="https://hcb.hackclub.com/donations/start/stem-sprouts" target="_blank" rel="noopener" class="donate-btn">Donate</a></li>
     </ul>
@@ -672,6 +756,39 @@
               <button class="btn" style="background: #333; color: #fff;" tabindex="-1">GitHub ↗</button>
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapters Section -->
+    <section class="chapters-section" id="chapters" aria-labelledby="chapters-heading">
+      <div class="chapters-inner">
+        <h3 id="chapters-heading">Start a Chapter</h3>
+        <p>STEM Sprouts is growing. Join a network of student leaders bringing hands-on STEM to elementary kids in their own communities — whether down the street or across the world.</p>
+
+        <div class="chapters-stats">
+          <div class="chapters-stat">
+            <span class="stat-number">🌍</span>
+            <span class="stat-label">International Reach</span>
+          </div>
+          <div class="chapters-stat">
+            <span class="stat-number">Free</span>
+            <span class="stat-label">to Apply</span>
+          </div>
+          <div class="chapters-stat">
+            <span class="stat-number">K–5</span>
+            <span class="stat-label">Focus</span>
+          </div>
+        </div>
+
+        <div class="chapters-cta-card">
+          <div class="chapters-cta-text">
+            <h4>Ready to lead STEM in your community?</h4>
+            <p>Apply to start a chapter at your school or in your city. We'll provide curriculum, resources, and support to get you launched.</p>
+          </div>
+          <a href="https://chapters.stem-sprouts.org" target="_blank" rel="noopener" style="flex-shrink: 0;">
+            <button class="btn" style="white-space: nowrap; padding: 0.85rem 1.75rem; font-size: 1rem;" tabindex="-1">Apply Now ↗</button>
+          </a>
         </div>
       </div>
     </section>
@@ -772,7 +889,7 @@
         </div>
       </div>
 
-        <!-- Formspree Contact Form -->
+      <!-- Formspree Contact Form -->
       <div style="max-width: 600px; margin: 2rem auto; padding: 2rem; background: #1a1a1a; border-radius: 12px; box-shadow: 0 0 12px rgba(0,0,0,0.4);">
         <form action="https://formspree.io/f/xqaykpjv" method="POST" id="contact-form">
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
@@ -868,7 +985,6 @@
     document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.add("fade-in");
 
-      // Intersection Observer for testimonial animations
       const observerOptions = {
         threshold: 0.2,
         rootMargin: '0px 0px -50px 0px'
@@ -883,7 +999,6 @@
         });
       }, observerOptions);
 
-      // Observe all testimonial cards and video card
       document.querySelectorAll('.testimonial-card, .video-card').forEach(card => {
         observer.observe(card);
       });
@@ -898,7 +1013,7 @@
             document.body.style.opacity = 0;
             setTimeout(() => {
               window.location.href = href;
-            }, 300); // must match the transition duration
+            }, 300);
           });
         }
       });
@@ -907,4 +1022,3 @@
 
 </body>
 </html>
-
